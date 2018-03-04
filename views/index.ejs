@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="X-UA_Compatible" content="ie=edge">
+        <title>Jeyhun's Profile</title>
+        <!-- Bootstrap and Font Awesome css-->
+        <!-- we use cdn but you can also include local files located in css directory-->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <!-- Google fonts - Montserrat for headings, Cardo for copy-->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Montserrat:400,700|Cardo:400,400italic,700">
+        <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+        <!-- Start of Async Drift Code -->
+        <link rel="stylesheet" href="/styles.css" />
+    </head>
+    <body>
+        <div id="root"><%- initialContent %></div>
+        <script>
+          window.__PRELOADED_STATE__ = <%- serializedState  %>
+        </script>
+        <script src="/client.js" charset="UTF-8"></script>
+    </body>
+</html>

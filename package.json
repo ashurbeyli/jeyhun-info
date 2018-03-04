@@ -1,0 +1,53 @@
+{
+  "name": "jeyhun.info",
+  "version": "1.0.0",
+  "description": "Personal Webpage with Express, React, React-Redux",
+  "main": "lib/server.js",
+  "author": "Jeyhun Ashurbayov",
+  "license": "MIT",
+  "scripts": {
+    "dev": "pm2 start lib/server.js --watch --interpreter babel-node",
+    "webpack": "webpack -wd",
+    "test": "jest --watchAll",
+    "verify-tests": "jest --coverage"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.2",
+    "css-loader": "^0.28.10",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.18.1",
+    "eslint-plugin-react": "^7.7.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^22.4.2",
+    "jest-webpack-resolver": "^0.3.0",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.20.2",
+    "url-loader": "^0.6.2",
+    "webpack-cli": "^2.0.9",
+    "webpack-node-externals": "^1.6.0"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.3",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "file-loader": "^1.1.11",
+    "pm2": "^2.10.1",
+    "react": "^16.2.0",
+    "react-bootstrap": "^0.32.1",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
+    "react-router-bootstrap": "^0.24.4",
+    "react-router-config": "^1.0.0-beta.4",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "webpack": "^4.0.1"
+  }
+}
