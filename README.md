@@ -1,6 +1,6 @@
-# jeyhuns-profile
+# jeyhun.info
 
-Personal Web Application with ReactJs, React-Redux, Jest, Enzyme
+Personal Web Application with ExpressJs, ReactJs, React-Redux
 
 Loading... 10%
 
