@@ -2,17 +2,33 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
 
-const config = {
+const clientConfig = {
+  mode: 'production',
   name: 'client',
   resolve: {
     alias: {
       Assets: path.resolve(__dirname, 'lib/assets/'),
-    }
+    },
+    modules: [path.resolve('./lib'), path.resolve('./node_modules')]
   },
-  entry: ['babel-polyfill', './lib/renderers/dom.js'],
+  entry: {
+    clientVendor: [
+      'babel-polyfill',
+      'react',
+      'react-dom',
+      'redux',
+      'react-redux',
+      'react-bootstrap',
+      'react-router-bootstrap',
+      'react-router-config',
+      'react-router-dom',
+      'prop-types',
+    ],
+    clientApp: ['./lib/renderers/dom.js']
+  },
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: 'client.js'
+    filename: '[name].js'
   },
   module: {
     rules: [
@@ -38,6 +54,7 @@ const config = {
       },
       {
         test: /\.scss$/,
+        exclude: /node_modules/,
         loader: ExtractTextPlugin.extract('css-loader!sass-loader')
       }
     ]
@@ -48,6 +65,7 @@ const config = {
 };
 
 const serverConfig = {
+  mode: 'production',
   name: 'server',
   target: 'node',
   externals: [nodeExternals()],
@@ -56,10 +74,24 @@ const serverConfig = {
       Assets: path.resolve(__dirname, 'lib/assets/'),
     }
   },
-  entry: ['./lib/renderers/server.js'],
+  entry: {
+    serverVendor: [
+      'babel-polyfill',
+      'react',
+      'react-dom',
+      'redux',
+      'react-redux',
+      'react-bootstrap',
+      'react-router-bootstrap',
+      'react-router-config',
+      'react-router-dom',
+      'prop-types',
+    ],
+    serverApp: ['./lib/renderers/server.js']
+  },
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: 'server.js',
+    filename: '[name].js',
     libraryTarget: 'commonjs2'
   },
   module: {
@@ -86,6 +118,7 @@ const serverConfig = {
       },
       {
         test: /\.scss$/,
+        exclude: /node_modules/,
         loader: ExtractTextPlugin.extract('css-loader!sass-loader')
       }
     ]
@@ -95,4 +128,7 @@ const serverConfig = {
   ]
 };
 
-module.exports = [config, serverConfig];
+module.exports = [
+  clientConfig,
+  serverConfig
+];

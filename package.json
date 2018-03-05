@@ -11,6 +11,7 @@
     "webpack": "webpack -wd",
     "test": "jest --watchAll",
     "verify-tests": "jest --coverage",
+    "build-webpack": "webpack -p",
     "build": "babel lib -d build --copy-files"
   },
   "devDependencies": {
