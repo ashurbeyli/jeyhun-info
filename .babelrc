@@ -1,8 +1,16 @@
 {
   "presets": [
     "react",
-    "env",
+    ["env",
+      {
+        "targets": {
+          "node": "current"
+        }
+      }
+    ],
     "stage-2"
   ],
-  "plugins": ["transform-async-to-generator"]
+  "plugins": [
+    "transform-class-properties"
+  ]
 }

@@ -6,13 +6,16 @@
   "author": "Jeyhun Ashurbayov",
   "license": "MIT",
   "scripts": {
-    "dev": "pm2 start lib/server.js --watch --interpreter babel-node",
+    "dev": "NODE_ENV=development NODE_PATH=./lib pm2 start lib/server.js --watch --interpreter babel-node --name appDev",
+    "prod": "NODE_ENV=production NODE_PATH=./build pm2 start build/server.js -i max --name appProd",
     "webpack": "webpack -wd",
     "test": "jest --watchAll",
-    "verify-tests": "jest --coverage"
+    "verify-tests": "jest --coverage",
+    "build": "babel lib -d build --copy-files"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "css-loader": "^0.28.10",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
