@@ -22,7 +22,6 @@ deploy:
   bundle_type: zip
   application: JeyhunInfo
   deployment_group: JeyhunInfoDeploymentGroup
-  region: us-west-1
   on: *2
 script:
   - zip -r latest *
