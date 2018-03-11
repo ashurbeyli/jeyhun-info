@@ -4,6 +4,8 @@ node_js:
 cache:
   directories:
     - node_modules
+before_deploy:
+  - echo "Startin deployment processes..."
 deploy:
 - provider: s3
   access_key_id: $AWS_ACCESS_KEY
@@ -22,6 +24,8 @@ deploy:
   application: JeyhunInfo
   deployment_group: JeyhunInfoDeploymentGroup
   on: *2
+after_deploy:
+  - echo "Performing after deploy procedures..."
 script:
   - yarn test
   - yarn verify-tests
