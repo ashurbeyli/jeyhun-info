@@ -12,12 +12,11 @@ deploy:
   skip_cleanup: true
   on: &2
     repo: ashurbeyli/jeyhun.info
-  bucket: jeyhun.info.bucket
-  region: us-west-1
+  bucket: jeyhun-info-bucket
 - provider: codedeploy
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
-  bucket: jeyhun.info.bucket
+  bucket: jeyhun-info-bucket
   key: latest.zip
   bundle_type: zip
   application: JeyhunInfo
