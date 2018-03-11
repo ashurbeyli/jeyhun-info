@@ -27,6 +27,6 @@ script:
   - yarn verify-tests
   - yarn build-webpack
   - yarn build
-  - zip -r latest /build
+  - zip -r latest build
   - mkdir -p dpl_cd_upload
   - mv latest.zip dpl_cd_upload/latest.zip
