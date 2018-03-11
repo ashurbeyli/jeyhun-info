@@ -5,25 +5,25 @@ cache:
   directories:
     - node_modules
 deploy:
-  - provider: s3
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
-    local_dir: dpl_cd_upload
-    skip_cleanup: true
-    on: &2
-      repo: ashurbeyli/jeyhun.info
-    bucket: jeyhun.info.bucket
-    region: us-west-1
-  - provider: codedeploy
-      access_key_id: $AWS_ACCESS_KEY
-      secret_access_key: $AWS_SECRET_KEY
-      bucket: jeyhun.info.bucket
-      key: latest.zip
-      bundle_type: zip
-      application: JeyhunInfo
-      deployment_group: JeyhunInfoDeploymentGroup
-      region: us-east-1c
-      on: *2
+- provider: s3
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  local_dir: dpl_cd_upload
+  skip_cleanup: true
+  on: &2
+    repo: ashurbeyli/jeyhun.info
+  bucket: jeyhun.info.bucket
+  region: us-west-1
+- provider: codedeploy
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  bucket: jeyhun.info.bucket
+  key: latest.zip
+  bundle_type: zip
+  application: JeyhunInfo
+  deployment_group: JeyhunInfoDeploymentGroup
+  region: us-east-1c
+  on: *2
 script:
   - zip -r latest *
   - mkdir -p dpl_cd_upload
