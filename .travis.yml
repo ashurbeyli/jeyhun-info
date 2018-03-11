@@ -23,6 +23,10 @@ deploy:
   deployment_group: JeyhunInfoDeploymentGroup
   on: *2
 script:
-  - zip -r latest *
+  - yarn test
+  - yarn verify-tests
+  - yarn build-webpack
+  - yarn build
+  - zip -r latest /build
   - mkdir -p dpl_cd_upload
   - mv latest.zip dpl_cd_upload/latest.zip
