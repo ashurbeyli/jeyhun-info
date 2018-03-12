@@ -9,10 +9,14 @@ hooks:
       runas: root
       timeout: 300
   AfterInstall:
-    - location: scripts/yarn-install.sh
+    - location: scripts/after-install.sh
       runas: root
       timeout: 300
   ApplicationStart:
-    - location: scripts/yarn-start.sh
+    - location: scripts/application-start.sh
       runas: root
       timeout: 60
+  ApplicationStop:
+    - location: scripts/application-stop.sh
+      runas: root
+      timeout: 120
