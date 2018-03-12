@@ -3,3 +3,12 @@ os: linux
 files:
   - source: /
     destination: /home/ec2-user/jeyhun.info
+hooks:
+  AfterInstall:
+    - location: scripts/yarn-install.sh
+      runas: root
+      timeout: 300
+  ApplicationStart:
+    - location: scripts/yarn-start.sh
+      runas: root
+      timeout: 60
