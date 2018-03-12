@@ -4,6 +4,10 @@ files:
   - source: /
     destination: /home/ec2-user/jeyhun.info
 hooks:
+  BeforeInstall:
+    - location: scripts/before-install.sh
+      runas: root
+      timeout: 300
   AfterInstall:
     - location: scripts/yarn-install.sh
       runas: root
