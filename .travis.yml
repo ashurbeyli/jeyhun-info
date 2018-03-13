@@ -32,6 +32,6 @@ after_deploy:
 script:
   - yarn build-webpack
   - yarn build
-  - zip -r latest build public scripts appspec.yml package.json
+  - zip -r latest build public scripts views appspec.yml package.json
   - mkdir -p dpl_cd_upload
   - mv latest.zip dpl_cd_upload/latest.zip
