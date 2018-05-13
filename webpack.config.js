@@ -47,10 +47,10 @@ const clientConfig = {
         }
       },
       {
-        test: /\.(png|jpg)$/i,
+        test: /\.(png|jpg|pdf|docx)$/i,
         exclude: /node_modules/,
-        loader: 'url-loader',
-        include: path.resolve(__dirname, 'lib/assets/images')
+        loader: 'file-loader?name=[path][name].[ext]',
+        include: path.resolve(__dirname, 'lib/assets')
       },
       {
         test: /\.scss$/,
@@ -111,10 +111,10 @@ const serverConfig = {
         }
       },
       {
-        test: /\.(png|jpg)$/i,
+        test: /\.(png|jpg|pdf|docx)$/i,
         exclude: /node_modules/,
-        loader: 'url-loader',
-        include: path.resolve(__dirname, 'lib/assets/images')
+        loader: 'file-loader?name=[path][name].[ext]',
+        include: path.resolve(__dirname, 'lib/assets')
       },
       {
         test: /\.scss$/,

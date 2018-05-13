@@ -30,6 +30,8 @@ deploy:
 after_deploy:
   - echo "Performing after deploy procedures..."
 script:
+  - yarn test
+  - yarn verify-tests
   - yarn build-webpack
   - yarn build
   - zip -r latest build public scripts views appspec.yml package.json
